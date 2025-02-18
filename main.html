@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Thumbnail Downloader</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+    input { padding: 10px; width: 300px; }
+    button { padding: 10px 20px; margin-top: 10px; }
+    img { margin-top: 20px; max-width: 100%; }
+  </style>
+</head>
+<body>
+  <h1>YouTube Thumbnail Downloader</h1>
+  <input type="text" id="url" placeholder="Enter YouTube Video URL">
+  <button onclick="fetchThumbnail()">Get Thumbnail</button>
+  <div id="thumbnail-container"></div>
+
+  <script>
+    function fetchThumbnail() {
+      const url = document.getElementById('url').value;
+      const videoId = url.match(/v=([^&]+)/)[1];
+      const thumbnailContainer = document.getElementById('thumbnail-container');
+
+      if (videoId) {
+        const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+        thumbnailContainer.innerHTML = `
+          <img src="${thumbnailUrl}" alt="YouTube Thumbnail">
+          <br>
+          <a href="${thumbnailUrl}" download>Download Thumbnail</a>
+        `;
+      } else {
+        thumbnailContainer.innerHTML = '<p>Invalid YouTube URL</p>';
+      }
+    }
+  </script>
+</body>
+</html>
