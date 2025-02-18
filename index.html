@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YouTube Thumbnail Downloader</title>
   <style>
@@ -10,30 +11,31 @@
     button { padding: 10px 20px; margin-top: 10px; }
     img { margin-top: 20px; max-width: 100%; }
   </style>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
   <h1>YouTube Thumbnail Downloader</h1>
   <input type="text" id="url" placeholder="Enter YouTube Video URL">
   <button onclick="fetchThumbnail()">Get Thumbnail</button>
   <div id="thumbnail-container"></div>
+  
+<nav></nav>
 
-  <script>
-    function fetchThumbnail() {
-      const url = document.getElementById('url').value;
-      const videoId = url.match(/v=([^&]+)/)[1];
-      const thumbnailContainer = document.getElementById('thumbnail-container');
 
-      if (videoId) {
-        const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-        thumbnailContainer.innerHTML = `
-          <img src="${thumbnailUrl}" alt="YouTube Thumbnail">
-          <br>
-          <a href="${thumbnailUrl}" download>Download Thumbnail</a>
-        `;
-      } else {
-        thumbnailContainer.innerHTML = '<p>Invalid YouTube URL</p>';
-      }
-    }
-  </script>
+    <!-- ----------   END OF NAV   ---------- -->
+
+    
+<header></header>
+<section></section>
+<footer></footer>
+
+    <!-- Swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main js -->
+    <script src="script.js"></script>
+    
 </body>
 </html>
