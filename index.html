@@ -2,24 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YouTube Thumbnail Downloader</title>
-  <style>
-    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
-    input { padding: 10px; width: 300px; }
-    button { padding: 10px 20px; margin-top: 10px; }
-    img { margin-top: 20px; max-width: 100%; }
-  </style>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
-  <h1>YouTube Thumbnail Downloader</h1>
-  <input type="text" id="url" placeholder="Enter YouTube Video URL">
-  <button onclick="fetchThumbnail()">Get Thumbnail</button>
-  <div id="thumbnail-container"></div>
+  <div class="container">
+    <h1>YouTube Thumbnail Downloader</h1>
+    <input type="text" id="videoUrl" placeholder="Enter YouTube Video URL">
+    <button id="getThumbnail">Get Thumbnail</button>
+    <div id="thumbnailContainer">
+      <img id="thumbnailImage" src="" alt="Thumbnail">
+      <a id="downloadLink" href="#" download>Download Thumbnail</a>
+    </div>
+  </div>
   
 <nav></nav>
 
