@@ -1,16 +1,19 @@
-function fetchThumbnail() {
-  const url = document.getElementById('url').value;
-  const videoId = url.match(/v=([^&]+)/)[1];
-  const thumbnailContainer = document.getElementById('thumbnail-container');
+document.getElementById('getThumbnail').addEventListener('click', function () {
+  const videoUrl = document.getElementById('videoUrl').value;
+  const videoId = extractVideoId(videoUrl);
 
   if (videoId) {
     const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-    thumbnailContainer.innerHTML = `
-      <img src="${thumbnailUrl}" alt="YouTube Thumbnail">
-      <br>
-      <a href="${thumbnailUrl}" download>Download Thumbnail</a>
-      ;
+    document.getElementById('thumbnailImage').src = thumbnailUrl;
+    document.getElementById('downloadLink').href = thumbnailUrl;
+    document.getElementById('thumbnailContainer').style.display = 'block';
   } else {
-      thumbnailContainer.innerHTML = '<p>Invalid YouTube URL</p>';
+    alert('Invalid YouTube URL');
   }
+});
+
+function extractVideoId(url) {
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+  return match && match[2].length === 11 ? match[2] : null;
 }
