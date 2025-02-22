@@ -42,33 +42,22 @@ button:hover {
   margin-top: 20px;
   display: none; /* Hide by default */
   display: flex; /* Use Flexbox */
-  align-items: center;
-  gap: 20px; /* Adjust the space between the image and links as needed */
+  align-items: flex-start; /* Align items to the top */
 }
 
 #thumbnailImage {
-  max-width: 200px; /* Adjust the size as needed */
-  border-radius: 8px; /* Optional: adds rounded corners */
+  max-width: 200px; /* 200px of the container */
+  border-radius: 4px;
   margin-right: 20px; /* Add space between image and links */
 }
 
 #downloadLinks {
   flex: 1; /* Take remaining space */
-  flex-direction: column;
-  color: #007bff;
-  text-decoration: underline;
-}
-#tagsContainer {
-  margin-top: 20px;
 }
 
-.tag {
-  display: inline-block;
-  background-color: #007bff;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 4px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  font-size: 14px;
+#downloadLinks a {
+  display: block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
 }
