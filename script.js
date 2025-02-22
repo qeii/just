@@ -17,3 +17,10 @@ function extractVideoId(url) {
   const match = url.match(regExp);
   return match && match[2].length === 11 ? match[2] : null;
 }
+
+document.getElementById('resetButton').addEventListener('click', function () {
+  document.getElementById('videoUrl').value = ''; // Clear input
+  document.getElementById('thumbnailContainer').style.display = 'none'; // Hide result
+  document.getElementById('thumbnailImage').src = ''; // Reset thumbnail image
+  document.getElementById('downloadLink').href = '#'; // Reset download link
+});
