@@ -41,16 +41,18 @@ button:hover {
 #thumbnailContainer {
   margin-top: 20px;
   display: none; /* Hide by default */
+  display: flex; /* Use Flexbox */
+  align-items: flex-start; /* Align items to the top */
 }
 
 #thumbnailImage {
-  max-width: 100%;
+  max-width: 66.66%; /* 2/3 of the container */
   border-radius: 4px;
+  margin-right: 20px; /* Add space between image and links */
 }
 
-#downloadLink {
-  display: block;
-  margin-top: 10px;
+#downloadLinks {
+  flex: 1; /* Take remaining space */
   color: #007bff;
   text-decoration: none;
 }
